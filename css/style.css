@@ -13,3 +13,12 @@ th {
   padding: 5px;
   border-bottom: 1px solid #aaa;
 }
+
+body {
+  background-image: url("../img/background.png");
+  background-repeat: repeat-y repeat-x;
+}
+
+a, h1, h2, form, label, li {
+  color: white;
+}
