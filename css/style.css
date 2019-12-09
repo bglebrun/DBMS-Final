@@ -22,4 +22,5 @@ body {
 
 a, h1, h2, h3, form, label, li, tr, th {
   color: white;
+  padding: 5px;
 }
