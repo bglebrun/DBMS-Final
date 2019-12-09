@@ -1,10 +1,10 @@
 <?php
     $new_student = array(
-        "ID"                => $_POST['ID'],
-        "name"              => $_POST['name'],
+        # "ID"                => $_POST['ID'],
+        "Name"              => $_POST['Name'],
         "email"             => $_POST['email'],
-        "AcLevel"           => $_POST['grad_year'],
+        "AcLevel"           => $_POST['AcLevel'],
         "GPA"               => $_POST['GPA'],
-        "emergency_contact" => $_POST['emergency_contact']
+        "EmergencyContact" => $_POST['EmergencyContact']
     );
 ?>

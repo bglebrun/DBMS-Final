@@ -6,6 +6,7 @@ label {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  border: 1;
 }
 
 td,
@@ -19,6 +20,6 @@ body {
   background-repeat: repeat-y repeat-x;
 }
 
-a, h1, h2, form, label, li {
+a, h1, h2, h3, form, label, li, tr, th {
   color: white;
 }

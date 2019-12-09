@@ -2,8 +2,8 @@
 
     if (isset($_POST['submit'])) {
         try {
-            require "../config.php";
-            require "../common.php";
+            require "config.php";
+            require "common.php";
         
             $conn = new PDO($dsn, $username, $password, $options);
             $sql = "SELECT *
@@ -12,11 +12,13 @@
         
             $location = $_POST['location'];
         
-            $statement = $connection->prepare($sql);
+            $statement = $conn->prepare($sql);
             $statement->bindParam(':location', $location, PDO::PARAM_STR);
             $statement->execute();
         
             $result = $statement->fetchAll();
+
+            $conn = null;
         } 
         
         catch(PDOException $error) {
@@ -72,7 +74,5 @@
   <input type="text" id="location" name="location">
   <input type="submit" name="submit" value="View Results">
 </form>
-
-<a href="index.php">Back to home</a>
 
 <?php require "templates/footer.php"; ?>

@@ -5,13 +5,9 @@
     *
     */
 
-    $servername = "localhost";
+    $host       = "localhost";
     $username   = "bglebrun";
     $password   = "password";
-    $dbname     = "test"; // will use later
+    $dbname     = "db_s7131322_f19"; // will use later
     $port       = 3306;
-    $dsn        = "mysql:host=$host;dbname=$dbname"; // will use later
-    $options    = array(
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-                );
 ?>
