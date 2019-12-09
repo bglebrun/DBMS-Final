@@ -14,6 +14,15 @@
   <li>
     <a href="displayDepartments.php"><strong>Department Directory</strong></a> - see all department
   </li>
+  <li>
+    <a href="UpdateEMContact.php"><strong>Update Emergency Contact</strong></a> - Update emergency contact info
+  </li>
+  <li>
+    <a href="RegisterForClass.php"><strong>Register For Class</strong></a> - Register for classes
+  </li>
+  <li>
+    <a href="DropClassStudent.php"><strong>Drop Classes</strong></a> - Drop Classes
+  </li>
 </ul>
 
 <h2> Staff </h2>

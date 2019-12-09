@@ -8,11 +8,11 @@
             or die ('Could not connect to the database server' . mysqli_connect_error());
     
         if(isset($_POST['submit'])) {
-            $FName = $_POST['IDNo'];
-            $LName = $_POST['CID'];
+            $IDNo = $_POST['IDNo'];
+            $CID = $_POST['CID'];
 
 
-            $sql = "DELETE FROM StudentCourses ( StudentID, CourseID ) VALUES ( '$IDNo' , '$CID' );";
+            $sql = "DELETE FROM StudentCourses WHERE StudentID = $IDNo and CourseID = $CID;";
 
             $results = $conn->query($sql);
             $message = "Course dropped from schedule";
@@ -20,9 +20,9 @@
     ?>
 
     	<label for="IDNumber">Student ID Number</label>
-    	<input type="text" name="IDNumber" id="IDNo">
+    	<input type="text" name="IDNo" id="IDNo">
     	<label for="Course ID">Course ID</label>
-    	<input type="text" name="Course ID" id="CID">
+    	<input type="text" name="CID" id="CID">
     	<input type="submit" name="submit" value="Submit">  
     </form>
 
