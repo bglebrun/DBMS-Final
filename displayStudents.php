@@ -6,7 +6,7 @@
     $conn = new mysqli($host, $username, $password, $dbname, $port)
         or die ('Could not connect to the database server' . mysqli_connect_error());
 
-    $results = $conn->query("SELECT * from students");
+    $results = $conn->query("SELECT * from Students");
 ?>
 
 <table>
