@@ -21,11 +21,11 @@ DROP TABLE IF EXISTS `db_s1751256_f19`.`Professors` ;
 
 CREATE TABLE IF NOT EXISTS `db_s1751256_f19`.`Professors` (
   `ProfessorID` INT NOT NULL AUTO_INCREMENT,
+  `FName` VARCHAR(20) NOT NULL,
+  `LName` VARCHAR(20) NOT NULL,
   `Department` INT NOT NULL,
   `Phone` VARCHAR(11) NULL,
   `email` VARCHAR(60) NULL,
-  `FName` VARCHAR(20) NOT NULL,
-  `LName` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`ProfessorID`))
 ENGINE = InnoDB;
 
@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `db_s1751256_f19`.`Prefixes` ;
 
 CREATE TABLE IF NOT EXISTS `db_s1751256_f19`.`Prefixes` (
-  `PrefixID` INT NOT NULL,
+  `PrefixID` INT NOT NULL AUTO_INCREMENT,
   `Prefix` VARCHAR(5) NOT NULL,
   PRIMARY KEY (`PrefixID`))
 ENGINE = InnoDB;
@@ -155,12 +155,12 @@ DROP TABLE IF EXISTS `db_s1751256_f19`.`Students` ;
 
 CREATE TABLE IF NOT EXISTS `db_s1751256_f19`.`Students` (
   `StudentID` INT NOT NULL AUTO_INCREMENT,
+  `FName` VARCHAR(20) NOT NULL,
+  `LName` VARCHAR(20) NOT NULL,
   `email` VARCHAR(60) NULL,
   `ClassLevel` INT NOT NULL DEFAULT 1,
   `GPA` DECIMAL(3) NULL,
   `EmergencyContact` VARCHAR(11) NULL,
-  `FName` VARCHAR(20) NOT NULL,
-  `LName` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`StudentID`),
   INDEX `StudentLevel_idx` (`ClassLevel` ASC),
   CONSTRAINT `StudentLevel`
