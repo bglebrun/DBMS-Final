@@ -6,7 +6,9 @@
     $conn = new mysqli($host, $username, $password, $dbname, $port)
         or die ('Could not connect to the database server' . mysqli_connect_error());
 
-    $results = $conn->query("SELECT * from Professors");
+    $results = $conn->query("SELECT p.ProfessorID, p.FName AS 'First Name' , p.LName AS 'Last Name', d.Title , p.Phone, p.email
+    FROM Professors p
+    JOIN Departments d ON d.DepartmentID = p.Department");
 ?>
 
 <table>

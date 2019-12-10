@@ -256,3 +256,7 @@ insert into StudentCourses (StudentID, CourseID) values (69, 18);
 insert into StudentCourses (StudentID, CourseID) values (52, 9);
 insert into StudentCourses (StudentID, CourseID) values (55, 11);
 
+insert into Students (FName, Lname, EmergencyContact) values ('Zorine', 'Stutte', '9639967695');
+insert into Students (FName, Lname, EmergencyContact) values ('Renado', 'Melland', '5605166502');
+insert into Students (FName, Lname, EmergencyContact) values ('Von', 'Cuttell', '2252840390');
+insert into Students (FName, Lname, EmergencyContact) values ('Joseph', 'Yamanashi', '1405513571');
