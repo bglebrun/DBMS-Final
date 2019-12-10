@@ -1,7 +1,7 @@
 <?php include 'boilerplates/header.php'?>
-<h2>View Schedule</h2>
+<h2>Find Student</h2>
 
-<form method="post" action="displaySchedule.php">
+<form method="post" action="findStudent.php">
 
     <?php
         require "config.php";
@@ -9,21 +9,26 @@
         or die ('Could not connect to the database server' . mysqli_connect_error());
 
         if(isset($_POST['submit'])) {
-            $IDNo = $_POST['IDNumber'];
+            $FName = $_POST['FName'];
+            $LName = $_POST['LName'];
+            $IDNo = $_POST['IDNo'];
+            $sql = "";
 
-            $sql = "SELECT r.StudentID, c.CourseNumber, r.CourseID AS 'Section', c.Title, i.Prefix, c.ClassRoom, p.FName AS 'Prof. first name', p.LName AS 'Prof. last name' from StudentCourses r 
-            JOIN Courses c
-            ON c.CourseID = r.CourseID
-            JOIN Students s 
-            ON r.StudentID = s.StudentID
-            JOIN Prefixes i
-            ON i.PrefixID = c.Prefix
-            JOIN Professors p
-            ON p.ProfessorID = c.Instructor
-            
-            where r.StudentID = $IDNo";
+            if(empty($IDNo)) {
+
+                $sql = "SELECT *
+                FROM Students
+    
+                where FName = '$FName' or LName = '$LName'";    
+            } else {
+                $sql = "SELECT *
+                FROM Students
+    
+                where FName = '$FName' or LName = '$LName' or StudentID = $IDNo";
+            }
 
             $results = $conn->query($sql);
+
             
             echo "<table>";
             echo "<tr>";
@@ -49,8 +54,12 @@
             $conn->close();
         }
     ?>
-    <label for="IDNumber">Student ID</label>
-    <input type="text" name="IDNumber" id="IDNumber">
+    <label for="FName">Student First Name</label>
+    <input type="text" name="FName" id="FName">
+    <label for="LName">Student Last Name</label>
+    <input type="text" name="LName" id="LName">
+    <label for="IDNo">Student ID Number</label>
+    <input type="text" name="IDNo" id="IDNo">
     <input type="submit" name="submit" value="Submit">
 
 </form>
