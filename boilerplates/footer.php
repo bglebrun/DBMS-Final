@@ -1,4 +1,4 @@
-<a href="index.php">Back to home</a>
+<a href="index.html">Back to home</a>
 
 </body>
 </html>

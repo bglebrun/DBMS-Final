@@ -12,5 +12,3 @@
 
   <body>
     <h1>University Database App</h1>
-  </body>
-</html>
