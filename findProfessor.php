@@ -11,11 +11,10 @@
         if(isset($_POST['submit'])) {
             $FName = $_POST['FName'];
             $LName = $_POST['LName'];
-            $PNo = $_POST['PNo'];
-
+            $IDNo = $_POST['IDNo'];
             $sql = "";
 
-            if(empty($Pno)) {
+            if(empty($IDNo)) {
                 $sql = "SELECT p.ProfessorID, p.FName AS 'First Name' , p.LName AS 'Last Name', d.Title , p.Phone, p.email
                 FROM Professors p
                 JOIN Departments d ON d.DepartmentID = p.Department
@@ -26,7 +25,7 @@
                 FROM Professors p
                 JOIN Departments d ON d.DepartmentID = p.Department
     
-                where p.FName = '$FName' or p.LName = '$LName' or p.ProfessorID = $PNo";
+                where p.FName = '$FName' or p.LName = '$LName' or p.ProfessorID = $IDNo";
             }
 
 
@@ -60,8 +59,8 @@
     <input type="text" name="FName" id="FName">
     <label for="LName">Professor Last Name</label>
     <input type="text" name="LName" id="LName">
-    <label for="PNo">Professor ID Number</label>
-    <input type="text" name="PNo" id="PNo">
+    <label for="IDNo">Professor ID Number</label>
+    <input type="text" name="IDNo" id="IDNo">
     <input type="submit" name="submit" value="Submit">
 
 </form>
